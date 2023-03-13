@@ -1,23 +1,66 @@
-let task1 = 'sweep the floor'
-let task2 = 'get groceries'
-let task3 = 'make dinner'
+let task1 = {name: 'Sweep the floor', priority: 'Low', status: false}
 
-if(task3 === 'make dinner'){
-    console.log('completed')
-}else{
-    console.log('incomplete')
-}
+let task2 = {name: 'Get groceries', priority: 'Medium', status: false}
+
+let task3 = {name: 'Make dinner', priority: 'High', status: false}
 
 let tasks = [task1, task2, task3]
 
-for (let i = 0; i < tasks.length; i++){
-    let string = tasks[i]
+// function addTask(task) {
+//   tasks.push(task)
+// }
 
-    if(task[i] === `make dinner`){
-        string += `- complete`
-    }else {
-        string += `- Incomplete`
-    }
-
-console.log(string)
+const addTask = task => {
+  tasks.push(task)
 }
+
+addTask({name: 'Take out the trash', priority: 'Medium', status: false})
+
+console.log(tasks)
+
+//write a function called deleteTask that takes a task name a parameter
+//loop over and remove the task if it is in the array of tasks
+//otherwise, log that task was not in the array
+
+// function deleteTask(task) {
+//   for(let i = 0; i < tasks.length; i++){
+//     if(task === tasks[i].name) {
+//       tasks.splice([i], 1)
+//       console.log('Task deleted')
+//       return
+//     }
+//   }
+
+//   console.log('That task was not in the array.')
+// }
+
+const deleteTask = (task) => {
+  for(let i = 0; i < tasks.length; i++){
+    if(task === tasks[i].name) {
+      tasks.splice([i], 1)
+      console.log('Task deleted')
+      return
+    }
+  }
+
+  console.log('That task was not in the array.')
+}
+
+deleteTask('Take out the trash')
+
+console.log(tasks)
+
+
+//write a for loop that will print each of the tasks in the tasks array
+//intermediate challenge: implement the above if statement into that for loop
+// for(let i = 0; i < tasks.length; i++) {
+//   let string = tasks[i]
+
+//   if(tasks[i] === 'Make dinner') {
+//     string += ' - Complete'
+//   } else {
+//     string += ' - Incomplete'
+//   }
+
+//   console.log(string)
+// }
